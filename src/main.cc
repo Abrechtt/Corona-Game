@@ -88,6 +88,30 @@ int main()
     GameObject* treasure4{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
     SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(400, 100), b2BodyType::b2_staticBody, world, window)}; 
     treasure4->SetTagName("item");
+    GameObject* treasure5{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(300, 500), b2BodyType::b2_staticBody, world, window)}; 
+    treasure5->SetTagName("item");
+    GameObject* treasure6{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(200, 100), b2BodyType::b2_staticBody, world, window)}; 
+    treasure6->SetTagName("item");
+    GameObject* treasure7{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(310, 390), b2BodyType::b2_staticBody, world, window)}; 
+    treasure7->SetTagName("item");
+    GameObject* treasure8{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(699, 454), b2BodyType::b2_staticBody, world, window)}; 
+    treasure8->SetTagName("item");
+    GameObject* treasure9{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(668, 123), b2BodyType::b2_staticBody, world, window)}; 
+    treasure9->SetTagName("item");
+    GameObject* treasure10{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(605, 303), b2BodyType::b2_staticBody, world, window)}; 
+    treasure10->SetTagName("item");
+    GameObject* treasure11{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(045, 303), b2BodyType::b2_staticBody, world, window)}; 
+    treasure11->SetTagName("item");
+    GameObject* treasure12{new GameObject(tilesTexture3, 16 * 19, 16 * 19, 16, 16, 
+    SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(065, 103), b2BodyType::b2_staticBody, world, window)}; 
+    treasure12->SetTagName("item");
 
     /*GameObject* stairs{new GameObject(tilesTexture3, 16 * 3, 16 * 6, 16, 16, 
     SPRITE_SCALE, SPRITE_SCALE, new b2Vec2(100, 500), b2BodyType::b2_staticBody, world, window)};
@@ -99,6 +123,14 @@ int main()
     items->push_back(treasure2);
     items->push_back(treasure3);
     items->push_back(treasure4);
+    items->push_back(treasure5);
+    items->push_back(treasure6);
+    items->push_back(treasure7);
+    items->push_back(treasure8);
+    items->push_back(treasure9);
+    items->push_back(treasure10);
+    items->push_back(treasure11);
+    items->push_back(treasure12);
     //items->push_back(stairs);
 
     ContactListener* conctactListener{new ContactListener(score, items)};
@@ -197,6 +229,12 @@ int main()
 
         delete keyboardAxis;
         delete joystickAxis;
+
+        if (Score::Update(score->AddPoints(60)))
+        {
+            window->close();
+        }
+        
 
     }
     
